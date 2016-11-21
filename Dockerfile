@@ -101,10 +101,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 ############# Install ember & serverless dependencies
 RUN \
-	npm install -g ember-cli@2.8.0 &&\
-	npm install -g bower@1.7.9 &&\
-	npm install -g phantomjs@2.1.7 &&\
-	npm install -g serverless@v1.0.0-rc.2
+  npm install -g serverless@1.1.0
 
 # Install aws dependencies
 RUN \
