@@ -1,4 +1,4 @@
-FROM amazonlinux:2016.09.0.20161118-with-sources
+FROM amazonlinux:with-sources
 MAINTAINER Jared Short <jshort@trek10.com>
 
 ############# NODE 4.5 
