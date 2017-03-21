@@ -31,7 +31,7 @@ RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 ############# Install ember & serverless dependencies
 RUN \
-  npm install -g serverless@1.6.0
+  npm install -g serverless@1.9.0
 
 # Install aws dependencies
 RUN \
