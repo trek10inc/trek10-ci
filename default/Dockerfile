@@ -17,7 +17,7 @@ RUN set -ex \
   done
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 6.9.1
+ENV NODE_VERSION 6.10.2
 
 RUN yum update -y
 RUN yum install xz -y
@@ -28,10 +28,6 @@ RUN grep " node-v$NODE_VERSION-linux-x64.tar.xz\$" SHASUMS256.txt | sha256sum -c
 RUN tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1
 RUN rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt
 RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs
-
-############# Install ember & serverless dependencies
-RUN \
-  npm install -g serverless@1.9.0
 
 # Install aws dependencies
 RUN \
