@@ -1,8 +1,6 @@
 FROM amazonlinux:with-sources
 MAINTAINER Jared Short <jshort@trek10.com>
 
-############# NODE 4.5 
-
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex \
   && for key in \
@@ -29,7 +27,7 @@ RUN tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-compon
 RUN rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt
 RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-############# Install ember & serverless dependencies
+############# Install serverless dependencies
 RUN \
   npm install -g serverless@1.12.1
 
