@@ -17,7 +17,7 @@ RUN set -ex \
   done
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 6.9.1
+ENV NODE_VERSION 6.10.2
 
 RUN yum update -y
 RUN yum install xz -y
@@ -31,7 +31,7 @@ RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 ############# Install ember & serverless dependencies
 RUN \
-  npm install -g serverless@1.9.0
+  npm install -g serverless@1.12.1
 
 # Install aws dependencies
 RUN \
