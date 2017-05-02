@@ -35,4 +35,4 @@ RUN \
 
 # Install aws dependencies
 RUN \
-  yum install aws-cli -y
+  yum install aws-cli git -y
