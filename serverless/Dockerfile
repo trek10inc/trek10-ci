@@ -19,6 +19,7 @@ ENV NODE_VERSION 6.10.2
 
 RUN yum update -y
 RUN yum install xz -y
+RUN yum install git -y
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz"
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"
 RUN gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc
@@ -29,7 +30,7 @@ RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 ############# Install serverless dependencies
 RUN \
-  npm install -g serverless@1.12.1
+  npm install -g serverless@1.14.0
 
 # Install aws dependencies
 RUN \
