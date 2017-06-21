@@ -35,3 +35,6 @@ RUN \
 # Install aws dependencies
 RUN \
   yum install aws-cli -y
+
+RUN curl -O https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
