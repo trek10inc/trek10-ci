@@ -20,6 +20,7 @@ ENV NODE_VERSION 6.10.2
 RUN yum update -y
 RUN yum install xz -y
 RUN yum install git -y
+RUN yum install python-devel -y
 RUN yum groupinstall 'Development Tools' -y
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz"
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"
