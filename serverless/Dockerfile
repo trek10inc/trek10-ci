@@ -38,17 +38,13 @@ RUN \
 RUN \
   yum install aws-cli -y
 
-RUN yum -y install zlib-devel
-
-RUN yum install openssl-devel -y
+RUN yum -y install zlib-devel openssl-devel
 
 # Install Python 3.6
 RUN curl -O https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tar.xz
 RUN tar xJf Python-3.6.0.tar.xz
 WORKDIR /Python-3.6.0
-RUN ./configure --enable-optimizations
-RUN make
-RUN make install
+RUN ./configure --enable-optimizations && make && make install
 WORKDIR /
 
 RUN curl -O https://bootstrap.pypa.io/get-pip.py
