@@ -40,11 +40,13 @@ RUN \
 
 RUN yum -y install zlib-devel
 
+RUN yum install openssl-devel -y
+
 # Install Python 3.6
 RUN curl -O https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tar.xz
 RUN tar xJf Python-3.6.0.tar.xz
 WORKDIR /Python-3.6.0
-RUN ./configure
+RUN ./configure --enable-optimizations
 RUN make
 RUN make install
 WORKDIR /

@@ -34,16 +34,18 @@ RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs
 RUN \
   yum install aws-cli -y
 
-RUN yum -y install zlib-devel
+  RUN yum -y install zlib-devel
 
-# Install Python 3.6
-RUN curl -O https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tar.xz
-RUN tar xJf Python-3.6.0.tar.xz
-WORKDIR /Python-3.6.0
-RUN ./configure
-RUN make
-RUN make install
-WORKDIR /
+  RUN yum install openssl-devel -y
+
+  # Install Python 3.6
+  RUN curl -O https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tar.xz
+  RUN tar xJf Python-3.6.0.tar.xz
+  WORKDIR /Python-3.6.0
+  RUN ./configure --enable-optimizations
+  RUN make
+  RUN make install
+  WORKDIR /
 
 RUN curl -O https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
