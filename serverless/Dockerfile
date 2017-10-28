@@ -15,7 +15,7 @@ RUN set -ex \
   done
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 6.10.2
+ENV NODE_VERSION 8.8.1
 
 RUN yum update -y
 RUN yum install xz -y
