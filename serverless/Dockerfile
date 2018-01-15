@@ -1,5 +1,5 @@
 FROM amazonlinux:with-sources
-MAINTAINER Jared Short <jshort@trek10.com>
+LABEL maintainer="Jared Short <jshort@trek10.com>"
 
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex \
@@ -10,6 +10,8 @@ RUN set -ex \
     DD8F2338BAE7501E3DD5AC78C273792F7D83545D \
     C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
     B9AE9905FFD7803F25714661B63B535A4C206CA9 \
+    56730D5401028683275BD23C23EFEFE93C4CFFFE \
+    77984A986EBC2AA786BC0F66B01FBB92821C587A \
   ; do \
     gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key"; \
   done
