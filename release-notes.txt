@@ -1,3 +1,9 @@
+6.0
+---
+Refactor dockerfile for faster builds
+Add jq
+Update aws cli
+
 5.3
 ---
 Add jq
