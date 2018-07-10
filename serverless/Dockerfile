@@ -22,6 +22,7 @@ ENV NODE_VERSION 8.9.4
 RUN yum update -y
 RUN yum install xz -y
 RUN yum install git -y
+RUN yum install jq -y
 RUN yum install python27-devel.x86_64 -y
 RUN yum groupinstall 'Development Tools' -y
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz"
@@ -34,7 +35,7 @@ RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 ############# Install serverless dependencies
 RUN \
-  npm install -g serverless@1.23.0
+  npm install -g serverless@1.28.0
 
 # Install aws dependencies
 RUN \

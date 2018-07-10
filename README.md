@@ -7,3 +7,4 @@
 - Serverless
 - Python
 - AWS CLI
+- jq
