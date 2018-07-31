@@ -20,5 +20,8 @@ RUN pip install awscli --upgrade
 # install python 3
 RUN amazon-linux-extras install python3
 
+# update npm to latest version
+RUN npm install -g npm
+
 # install serverless framework
 RUN npm install -g serverless@1.28.0

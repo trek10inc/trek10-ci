@@ -1,3 +1,7 @@
+7.0
+---
+Updates npm to latest version [6.2.0]
+
 6.0
 ---
 Refactor dockerfile for faster builds
