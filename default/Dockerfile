@@ -16,6 +16,7 @@ RUN yum -y install \
 RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py
 RUN pip install awscli --upgrade
+RUN pip install aws-sam-cli
 
 # install python 3
 RUN amazon-linux-extras install python3
