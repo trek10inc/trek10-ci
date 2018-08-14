@@ -10,16 +10,18 @@ RUN yum -y install \
   nodejs \
   openssl-devel \
   python-devel.x86_64 \
+  python3-devel \
+  gcc \
   zlib-devel
+
+# install python 3
+RUN amazon-linux-extras install python3
 
 # install pip + aws cli
 RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py
 RUN pip install awscli --upgrade
 RUN pip install aws-sam-cli
-
-# install python 3
-RUN amazon-linux-extras install python3
 
 # update npm to latest version
 RUN npm install -g npm
