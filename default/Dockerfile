@@ -14,9 +14,6 @@ RUN yum -y install \
   gcc \
   zlib-devel
 
-# install python 3
-RUN amazon-linux-extras install python3
-
 # install pip + aws cli
 RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py
