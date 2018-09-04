@@ -1,4 +1,4 @@
-FROM amazonlinux:with-sources
+FROM amazonlinux:2017.09-with-sources
 LABEL maintainer="Jared Short <jshort@trek10.com>"
 
 RUN yum update -y
@@ -9,14 +9,14 @@ RUN yum -y install \
   jq \
   nodejs \
   openssl-devel \
-  python-devel.x86_64 \
-  python3-devel \
+  python27-devel.x86_64 \
+  python36-devel \
   gcc \
   zlib-devel
 
 # install pip + aws cli
 RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
-    python get-pip.py
+    python3 get-pip.py
 RUN pip install awscli --upgrade
 RUN pip install aws-sam-cli
 
