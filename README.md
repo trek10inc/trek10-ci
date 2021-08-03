@@ -7,5 +7,7 @@
 - npm
 - Serverless
 - Python
-- AWS CLI
+- AWS CLI v1 as `awsv1` and v2 as `aws`
 - jq
+- libxml
+- Org Formation CLI
