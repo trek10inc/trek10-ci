@@ -16,9 +16,17 @@ jobs:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions
           role-session-name: GitHubActions-${{ github.run_id }}
-      - name: Build, tag, and push image to Amazon ECR
+      - name: Build, tag, and push default image to Amazon ECR
         run: |
           aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/s5e9c0e3
+          cd default
           docker build -t ci:${{ github.ref_name }} .
           docker tag ci:${{ github.ref_name }} public.ecr.aws/s5e9c0e3/ci:${{ github.ref_name }}
           docker push public.ecr.aws/s5e9c0e3/ci:${{ github.ref_name }}
+      - name: Build, tag, and push serverless image to Amazon ECR
+        run: |
+          aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/s5e9c0e3
+          cd serverless
+          docker build -t ci:${{ github.ref_name }}-serverless .
+          docker tag ci:${{ github.ref_name }}-serverless public.ecr.aws/s5e9c0e3/ci:${{ github.ref_name }}-serverless
+          docker push public.ecr.aws/s5e9c0e3/ci:${{ github.ref_name }}-serverless
