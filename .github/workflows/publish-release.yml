@@ -1,0 +1,24 @@
+name: publish-image
+on:
+  push:
+    tags: '*'
+jobs:
+  publish-tagged-image:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
+      - name: Assume role
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions
+          role-session-name: GitHubActions-${{ github.run_id }}
+      - name: Build, tag, and push image to Amazon ECR
+        run: |
+          aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/s5e9c0e3
+          docker build -t ci:${{ github.ref_name }} .
+          docker tag ci:${{ github.ref_name }} public.ecr.aws/s5e9c0e3/ci:${{ github.ref_name }}
+          docker push public.ecr.aws/s5e9c0e3/ci:${{ github.ref_name }}
