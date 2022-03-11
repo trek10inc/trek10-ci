@@ -8,6 +8,7 @@ RUN yum -y install \
   unzip \
   git \
   jq \
+  make \
   nodejs \
   openssl-devel \
   python27-devel.x86_64 \
@@ -25,7 +26,7 @@ RUN pip install awscli --upgrade
 RUN pip install lxml
 
 # Move aws v1 to its own command awsv1
-RUN mv /usr/local/bin/aws /usr/local/bin/awsv1 
+RUN mv /usr/local/bin/aws /usr/local/bin/awsv1
 
 # Latest version of aws cli
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
