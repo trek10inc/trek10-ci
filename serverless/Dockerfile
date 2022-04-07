@@ -15,6 +15,7 @@ RUN yum -y install \
   python3 \
   python3-devel \
   gcc \
+  gcc-c++ \
   libxml2-devel \
   libxslt-devel \
   zlib-devel
