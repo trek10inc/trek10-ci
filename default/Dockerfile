@@ -10,6 +10,7 @@ RUN yum -y install \
   jq \
   make \
   nodejs \
+  openssl \
   openssl-devel \
   python27-devel.x86_64 \
   python3 \
