@@ -10,6 +10,7 @@ RUN yum -y install \
   jq \
   make \
   nodejs \
+  openssl \
   openssl-devel \
   python27-devel.x86_64 \
   python3 \
@@ -38,8 +39,11 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 # update npm to latest version
 RUN npm install -g npm
 
-# install serverless framework
-RUN npm install -g serverless@2.52.1
+# Install sam cli
+RUN pip install aws-sam-cli
 
 # install org formation
 RUN npm install -g --production aws-organization-formation@0.9.17
+
+# install serverless framework
+RUN npm install -g serverless@2.52.1
