@@ -12,6 +12,7 @@ RUN yum -y install \
   nodejs \
   openssl \
   openssl-devel \
+  libffi-devel \
   python27-devel.x86_64 \
   python3 \
   python3-devel \
