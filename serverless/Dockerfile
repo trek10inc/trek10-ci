@@ -25,3 +25,6 @@ RUN npm install -g npm
 
 # install serverless framework
 RUN npm install -g serverless@1.28.0
+
+ADD ../bin/assume-deploy-role.sh /usr/local/bin/assume-deploy-role
+ADD ../bin/cfn-wait.sh /usr/local/bin/cfn-wait

@@ -22,3 +22,6 @@ RUN pip install aws-sam-cli
 
 # update npm to latest version
 RUN npm install -g npm
+
+ADD ./bin/assume-deploy-role.sh /usr/local/bin/assume-deploy-role
+ADD ./bin/cfn-wait.sh /usr/local/bin/cfn-wait
