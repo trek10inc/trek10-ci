@@ -1,4 +1,4 @@
-FROM public.ecr.aws/amazonlinux/amazonlinux:2.0.20201111.0
+FROM public.ecr.aws/amazonlinux/amazonlinux:2023.6.20250218.2
 LABEL maintainer="Lucas Pearson <lpearson@trek10.com>"
 
 # add nodejs repo
@@ -12,7 +12,6 @@ RUN yum -y install \
   nodejs \
   openssl \
   openssl-devel \
-  python27-devel.x86_64 \
   python3 \
   python3-devel \
   gcc \
