@@ -2,7 +2,7 @@ FROM public.ecr.aws/amazonlinux/amazonlinux:2.0.20201111.0
 LABEL maintainer="Lucas Pearson <lpearson@trek10.com>"
 
 # add nodejs repo
-RUN curl --silent --location https://rpm.nodesource.com/setup_14.x | bash -
+RUN curl --silent --location https://rpm.nodesource.com/setup_22.x | bash -
 RUN yum -y install \
   zip \
   unzip \
